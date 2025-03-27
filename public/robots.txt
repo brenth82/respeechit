@@ -1,3 +1,0 @@
-# Disallow all crawlers from accessing any part of this site
-User-agent: *
-Disallow: /
