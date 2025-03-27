@@ -1,0 +1,41 @@
+{  "version": 2,
+  "builds": [
+    {
+      "src": "dist/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/generated/(.*)",
+      "dest": "dist/index.js"
+    },
+    {
+      "src": "/",
+      "dest": "dist/index.js"
+    },
+    {
+      "src": "/login",
+      "dest": "dist/index.js"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "public/robots.txt"
+    },
+    {
+      "src": "/(.+\\.(js|css|png|jpg|jpeg|gif|svg|ico))",
+      "dest": "public/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dist/index.js"
+    }
+  ]
+}
